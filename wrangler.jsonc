@@ -9,7 +9,7 @@
 	"compatibility_date": "2025-03-03",
     "d1_databases": [
         {
-          "binding": "DATABASE_URL",
+          "binding": "DATABASE",
           "database_name": "readtalk-db",
           "database_id": "ff653b9c-4e2c-479d-8aa4-497da62de3c5"
         }
@@ -18,7 +18,7 @@
         {
             "store_id": "ba61a44a2c574393a624a0e2a97a9f0d",
             "binding": "SECRET",
-            "secret_name": "<YOUR-SECRET-NAME>"
+            "secret_name": "SECRET"
         }
     ],
 	"observability": {
