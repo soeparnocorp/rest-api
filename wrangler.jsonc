@@ -18,7 +18,7 @@
         {
             "store_id": "ba61a44a2c574393a624a0e2a97a9f0d",
             "binding": "SECRET",
-            "secret_name": "secret_store"
+            "secret_name": "secret-store"
         }
     ],
 	"observability": {
