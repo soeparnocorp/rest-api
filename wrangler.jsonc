@@ -1,26 +1,29 @@
-/**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "rest-api",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-03-03",
-    "d1_databases": [
-        {
-          "binding": "DB",
-          "database_name": "readtalk-db",
-          "database_id": "ff653b9c-4e2c-479d-8aa4-497da62de3c5"
-        }
-    ],
-    "secrets_store_secrets": [
-        {
-            "store_id": "ba61a44a2c574393a624a0e2a97a9f0d",
-            "binding": "SECRET",
-            "secret_name": "secret-store"
-        }
-    ],
+	"migrations": [
+		{
+			"new_sqlite_classes": [
+                "AuthorizationDurableObject",
+				"ConversationDurableObject"
+			],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+            {
+				"class_name": "AuthorizationDurableObject",
+				"name": "AUTHORIZATION_DURABLE_OBJECT"
+			},
+			{
+				"class_name": "ConversationDurableObject",
+				"name": "CONVERSATION_DURABLE_OBJECT"
+			}
+		]
+	},
 	"observability": {
 		"enabled": true
 	}
